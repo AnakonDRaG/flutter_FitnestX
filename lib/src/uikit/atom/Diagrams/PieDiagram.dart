@@ -24,16 +24,64 @@ class PieDiagram extends StatefulWidget {
   State<PieDiagram> createState() => _PieDiagramState();
 }
 
-class _PieDiagramState extends State<PieDiagram> {
+class _PieDiagramState extends State<PieDiagram> with SingleTickerProviderStateMixin {
+  late ValueNotifier<double> progress;
+  late double oldValue = 0;
+
+  late AnimationController _animationController;
+  late Animation<double> _progressAnimation;
+  final Duration fillDuration = const Duration(milliseconds: 500);
+
+  late final Tween<double> _tween = Tween(begin: 0.0, end: widget.value);
+
+  double progressDegrees = 0;
+
+  @override
+  void initState() {
+    super.initState();
+
+    _animationController =
+        AnimationController(vsync: this, duration: fillDuration);
+
+    _progressAnimation = _tween.animate(
+        CurvedAnimation(parent: _animationController, curve: Curves.easeIn))
+      ..addListener(() {
+        setState(() {
+          progressDegrees = _progressAnimation.value;
+        });
+      });
+    //_radialProgressAnimationController.repeat();
+    _animationController.forward();
+  }
+
+  @override
+  void dispose() {
+    _animationController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
+    if (oldValue != widget.value) {
+      if (_animationController.isAnimating) {
+        _tween.begin = _progressAnimation.value;
+      } else {
+        _tween.begin = oldValue;
+      }
+
+      _tween.end = widget.value;
+      _animationController.forward(from: 0);
+
+      oldValue = widget.value;
+    }
+
     return CustomPaint(
       child: SizedBox(
         height: widget.radius,
         width: widget.radius,
       ),
       painter: PieDiagramPainter(
-        value: widget.value,
+        value: progressDegrees,
         gradient: widget.gradient,
         background: widget.background ?? ThemeColors.whiteColors.normal,
       ),
