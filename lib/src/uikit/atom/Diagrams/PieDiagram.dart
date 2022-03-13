@@ -1,7 +1,9 @@
 import 'dart:math';
 
 import 'package:FitnestX/src/uikit/style/colors.dart';
+import 'package:FitnestX/src/uikit/style/constants.dart';
 import 'package:FitnestX/src/uikit/style/gradients.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:vector_math/vector_math_64.dart' as math;
 
@@ -24,7 +26,8 @@ class PieDiagram extends StatefulWidget {
   State<PieDiagram> createState() => _PieDiagramState();
 }
 
-class _PieDiagramState extends State<PieDiagram> with SingleTickerProviderStateMixin {
+class _PieDiagramState extends State<PieDiagram>
+    with SingleTickerProviderStateMixin {
   late ValueNotifier<double> progress;
   late double oldValue = 0;
 
@@ -102,7 +105,16 @@ class PieDiagramPainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    Paint circleBackground = Paint()
+    Offset center = Offset(size.width / 2, size.height / 2);
+    double radius = min(size.width / 2 - 5, size.height / 2 - 5);
+
+    var startRadian = math.radians(-100);
+    var progress = math.radians(value * 360 / 100);
+    var shadowOffset = Offset(center.dx, center.dy + 10);
+
+    var _rectFromCircle = Rect.fromCircle(center: center, radius: radius);
+
+    final Paint circleBackground = Paint()
       ..color = background
       ..style = PaintingStyle.fill;
 
@@ -111,17 +123,10 @@ class PieDiagramPainter extends CustomPainter {
       ..style = PaintingStyle.fill
       ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 40);
 
-    Offset center = Offset(size.width / 2, size.height / 2);
-    double radius = min(size.width / 2 - 5, size.height / 2 - 5);
-
-    var starRadian = math.radians(-90);
-    var progress = math.radians(value * 360 / 100);
-    var shadowOffset = Offset(center.dx, center.dy + 10);
-
-    var _rectFromCircle = Rect.fromCircle(center: center, radius: radius);
-
-    canvas.drawCircle(shadowOffset, radius / 1.1, circleShadow);
-    canvas.drawCircle(center, radius / 1.1, circleBackground);
+    Paint progressShadowPaint = Paint()
+      ..color = gradient.colors[0].withOpacity(0.3)
+      ..style = PaintingStyle.fill
+      ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 20);
 
     Paint progressPaint = Paint()
       ..shader = gradient.createShader(_rectFromCircle)
@@ -134,18 +139,50 @@ class PieDiagramPainter extends CustomPainter {
       ..shader = gradient.createShader(_rectFromCircle)
       ..style = PaintingStyle.fill;
 
-    Paint progressShadowPaint = Paint()
-      ..color = gradient.colors[0].withOpacity(0.3)
-      ..style = PaintingStyle.fill
-      ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 20);
+    canvas.drawCircle(shadowOffset, radius / 1.1, circleShadow);
+    canvas.drawCircle(center, radius / 1.1, circleBackground);
 
     canvas.drawArc(Rect.fromCircle(center: shadowOffset, radius: radius),
-        starRadian, progress, true, progressShadowPaint);
+        startRadian, progress, true, progressShadowPaint);
 
-    canvas.drawArc(_rectFromCircle, starRadian, progress, true, progressPaint);
+    canvas.drawArc(_rectFromCircle, startRadian, progress, true, progressPaint);
 
     canvas.drawArc(
-        _rectFromCircle, starRadian, progress, true, progressFillPaint);
+        _rectFromCircle, startRadian, progress, true, progressFillPaint);
+
+    late TextSpan text = TextSpan(
+      style: TextStyle(
+          color: Colors.white,
+          fontSize: 14 + 6 * (value / 100),
+          shadows: [
+            Shadow(
+              offset: const Offset(0, 4),
+              blurRadius: 64,
+              color: ThemeColors.darkColors.normal,
+            ),
+          ]),
+      text: value.toStringAsFixed(1),
+    );
+
+    TextPainter textPainter =
+        TextPainter(text: text, textDirection: TextDirection.ltr);
+
+    const _startRad = 90;
+    textPainter.layout(minWidth: 0, maxWidth: double.maxFinite);
+    textPainter.paint(
+      canvas,
+      Offset(
+          center.dx +
+              cos(math.radians(-(value - _startRad) / 4 / 100 * 90) * 4) /
+                  2 *
+                  radius -
+              textPainter.width / 1.8,
+          center.dy +
+              sin(math.radians((value - _startRad) / 4 / 100 * 90) * 4) /
+                  2 *
+                  radius -
+              textPainter.height / 1.2),
+    );
   }
 
   @override
