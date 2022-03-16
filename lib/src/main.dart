@@ -2,50 +2,31 @@ import 'package:FitnestX/src/screens/example/index.dart';
 import 'package:FitnestX/src/uikit/style/colors.dart';
 import 'package:flutter/material.dart';
 
+import 'common/router.dart';
 import 'uikit/style/theme.dart';
 
 
 
 void main() {
-  runApp(const MyApp());
+  runApp(const App());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class App extends StatelessWidget {
+  static final AppRouter _router = AppRouter();
 
-  // This widget is the root of your application.
+  const App({Key? key}) : super(key: key);
+
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
+    return MaterialApp.router(
+      routeInformationParser: _router.getRouter.routeInformationParser,
+      routerDelegate: _router.getRouter.routerDelegate,
+      title: 'FitnestX',
       theme: ThemeData(
         primarySwatch: Colors.blue,
         backgroundColor: ThemeColors.whiteColors.normal
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Knight and Day',
-      home: const SafeArea(
-        child:  ExampleScreen(),
-      ),
-      theme: CustomTheme(context),
     );
   }
 }

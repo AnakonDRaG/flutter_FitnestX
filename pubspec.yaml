@@ -37,6 +37,8 @@ dependencies:
   flutter_svg: ^1.0.3
   iconly: ^1.0.1
   figma_squircle: ^0.5.3
+  carousel_slider: ^4.0.0
+  go_router: ^3.0.4
 
 dev_dependencies:
   flutter_test:
@@ -54,11 +56,15 @@ dev_dependencies:
 
 # The following section is specific to Flutter.
 flutter:
+  uses-material-design: true
+  assets:
+    - lib/src/assets/images/
+    - lib/src/assets/images/onboarding/
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
-  uses-material-design: true
+
 
   # To add assets to your application, add an assets section, like this:
   # assets:
