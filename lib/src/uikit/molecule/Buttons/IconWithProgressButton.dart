@@ -1,4 +1,4 @@
-import 'package:FitnestX/src/uikit/atom/Diagrams/RadialStrokeDiagram.dart';
+import 'package:FitnestX/src/uikit/molecule/Diagrams/RadialStrokeDiagram.dart';
 import 'package:FitnestX/src/uikit/molecule/Buttons/IconGradientButton.dart';
 import 'package:flutter/widgets.dart';
 
