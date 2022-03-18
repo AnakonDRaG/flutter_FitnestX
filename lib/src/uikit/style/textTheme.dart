@@ -7,9 +7,9 @@ class FontSize {
   static const double h4 = 20;
 
   static const double subtitle = 18;
-  static const double largeText = 16;
-  static const double mediumText = 14;
-  static const double smallText = 12;
+  static const double large = 16;
+  static const double medium = 14;
+  static const double small = 12;
 
   static const double caption = 10;
 
@@ -25,7 +25,7 @@ const TextTheme TEXT_THEME_DEFAULT = TextTheme(
   headline4: TextStyle(fontSize: FontSize.h4),
   subtitle1: TextStyle(fontSize: FontSize.subtitle),
   subtitle2: TextStyle(fontSize: FontSize.subtitle),
-  bodyText1: TextStyle(fontSize: FontSize.mediumText),
-  bodyText2: TextStyle(fontSize: FontSize.mediumText),
+  bodyText1: TextStyle(fontSize: FontSize.large),
+  bodyText2: TextStyle(fontSize: FontSize.medium),
   caption: TextStyle(fontSize: FontSize.caption),
 );

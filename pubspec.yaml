@@ -60,6 +60,7 @@ flutter:
   assets:
     - lib/src/assets/images/
     - lib/src/assets/images/onboarding/
+    - lib/src/assets/images/companies/
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in

@@ -85,8 +85,7 @@ class _BaseButtonState extends State<BaseButton> {
                 widget.middleWidget as String,
                 style: TextStyle(
                   color: widget.textColor ?? ThemeColors.darkColors.normal,
-                  fontSize:
-                      widget.isSmall ? FontSize.smallText : FontSize.largeText,
+                  fontSize: widget.isSmall ? FontSize.small : FontSize.medium,
                   fontWeight:
                       widget.isSmall ? FontWeight.normal : FontWeight.bold,
                 ),

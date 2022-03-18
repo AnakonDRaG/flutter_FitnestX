@@ -1,3 +1,4 @@
+import 'package:FitnestX/src/uikit/style/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:FitnestX/src/uikit/style/textTheme.dart';
@@ -21,6 +22,7 @@ class ThemeProvider extends ChangeNotifier {
 }
 
 ThemeData CustomTheme(BuildContext context) => Theme.of(context).copyWith(
+      scaffoldBackgroundColor: ThemeColors.whiteColors.normal,
       shadowColor: const Color(0xffECECEC),
       textTheme: Theme.of(context)
           .textTheme
@@ -40,7 +42,7 @@ class ApplicationTheme {
 
   static final lightTheme = ThemeData(
     scaffoldBackgroundColor: Colors.white,
-    primaryColor: Colors.white,
+    primaryColor: Colors.red,
     colorScheme: const ColorScheme.light(),
     iconTheme: const IconThemeData(color: Colors.red, opacity: 0.8),
   );

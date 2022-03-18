@@ -5,8 +5,6 @@ import 'package:flutter/material.dart';
 import 'common/router.dart';
 import 'uikit/style/theme.dart';
 
-
-
 void main() {
   runApp(const App());
 }
@@ -16,17 +14,13 @@ class App extends StatelessWidget {
 
   const App({Key? key}) : super(key: key);
 
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
       routeInformationParser: _router.getRouter.routeInformationParser,
       routerDelegate: _router.getRouter.routerDelegate,
       title: 'FitnestX',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        backgroundColor: ThemeColors.whiteColors.normal
-      ),
+      theme: CustomTheme(context),
     );
   }
 }

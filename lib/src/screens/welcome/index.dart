@@ -1,8 +1,9 @@
 import 'package:FitnestX/src/uikit/atom/atoms.dart';
+import 'package:FitnestX/src/uikit/molecule/molecules.dart';
+import 'package:FitnestX/src/uikit/style/gradients.dart';
 import 'package:FitnestX/src/uikit/style/indents.dart';
 import 'package:flutter/material.dart';
 import 'package:FitnestX/src/screens/welcome/components/LogoText.dart';
-import 'package:FitnestX/src/uikit/molecule/Buttons/BlueGradientButton.dart';
 import 'package:FitnestX/src/uikit/organism/Screen.dart';
 import 'package:go_router/go_router.dart';
 
@@ -25,8 +26,9 @@ class _WellComeScreenState extends State<WelComeScreen> {
       ),
       bottomNavigationBar: Padding(
         padding: ThemeIndents.content,
-        child: BlueGradientButton(
+        child: GradientButton(
           "Get Started",
+          gradient: ThemeGradients.blue,
           isFullWidth: true,
           onPressed: () {
             context.go("/onboarding");
