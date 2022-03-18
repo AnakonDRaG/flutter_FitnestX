@@ -12,5 +12,6 @@ export 'Diagrams/RadialStrokeDiagram.dart';
 
 export 'Form/Inputs/TextInput.dart';
 export 'Form/Inputs/PasswordInput.dart';
+export 'Form/Inputs/Checkbox.dart';
 
 export 'Components/HorizontalTextDivider.dart';
