@@ -12,6 +12,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:iconly/iconly.dart';
 
+import '../Components/CompaniesButtons.dart';
+
 class LoginScreen extends StatelessWidget {
   const LoginScreen({Key? key}) : super(key: key);
 
@@ -77,19 +79,7 @@ class LoginScreen extends StatelessWidget {
             const SizedBox(height: 30),
             const HorizontalTextDivider("Or"),
             const SizedBox(height: 30),
-            Wrap(
-              spacing: 30,
-              children: const [
-                CompanyButton(
-                  logoPath: LOGO_GOOGLE_SVG,
-                  onTap: null,
-                ),
-                CompanyButton(
-                  logoPath: LOGO_FACEBOOK_SVG,
-                  onTap: null,
-                ),
-              ],
-            ),
+            const CompaniesButtons(),
             const SizedBox(height: 30),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,

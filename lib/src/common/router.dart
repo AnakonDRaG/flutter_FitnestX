@@ -1,4 +1,5 @@
 import 'package:FitnestX/src/screens/auth/login/index.dart';
+import 'package:FitnestX/src/screens/auth/signUp/index.dart';
 import 'package:FitnestX/src/screens/example/index.dart';
 import 'package:FitnestX/src/screens/onboarding/index.dart';
 import 'package:FitnestX/src/screens/welcome/index.dart';
@@ -6,7 +7,7 @@ import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
 
 class AppRouter {
-  final String initialLocation = '/login';
+  final String initialLocation = '/signUp';
 
   GoRouter get getRouter => GoRouter(
         initialLocation: initialLocation,
@@ -30,6 +31,11 @@ class AppRouter {
             path: '/login',
             builder: (BuildContext context, GoRouterState state) =>
             const LoginScreen(),
+          ),
+          GoRoute(
+            path: '/signUp',
+            builder: (BuildContext context, GoRouterState state) =>
+            const SignUpScreen(),
           ),
         ],
       );
