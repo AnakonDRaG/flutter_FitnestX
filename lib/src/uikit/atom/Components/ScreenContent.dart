@@ -1,3 +1,4 @@
+import 'package:FitnestX/src/common/utils.dart';
 import 'package:FitnestX/src/uikit/style/indents.dart';
 import 'package:flutter/widgets.dart';
 
@@ -9,7 +10,7 @@ class ScreenContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: double.infinity,
+      width: ScreenUtils.width,
       margin: ThemeIndents.content,
       child: child,
     );

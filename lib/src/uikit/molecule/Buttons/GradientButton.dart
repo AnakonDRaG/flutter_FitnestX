@@ -13,6 +13,7 @@ class GradientButton extends StatelessWidget {
 
   final IconData? leftIcon;
   final IconData? rightIcon;
+  final double? iconSize;
 
   final ShapeBorder? shapeBorder;
   final Gradient gradient;
@@ -28,7 +29,7 @@ class GradientButton extends StatelessWidget {
     this.leftIcon,
     this.rightIcon,
     this.shapeBorder,
-    this.shadows,
+    this.shadows, this.iconSize,
   }) : super(key: key);
 
   @override
@@ -45,6 +46,7 @@ class GradientButton extends StatelessWidget {
       isFullWidth: isFullWidth,
       leftIcon: leftIcon,
       rightIcon: rightIcon,
+      iconSize: iconSize,
       shapeBorder: shapeBorder,
     );
   }

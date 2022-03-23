@@ -61,8 +61,9 @@ class _OnboardingState extends State<OnboardingScreen> {
     durationMilliseconds: 500,
     children: List.generate(
       _titles.length,
-      (index) => TitleText(
+      (index) => Heading2(
         _titles[index],
+        style: const TextStyle(fontWeight: FontWeight.bold),
         key: ValueKey(index),
       ),
     ),
@@ -83,52 +84,51 @@ class _OnboardingState extends State<OnboardingScreen> {
   @override
   Widget build(BuildContext context) {
     return Screen(
-      child: PageScrollView(
-        child: Column(
-          children: [
-            Expanded(flex: 2, child: _animationController.render()),
-            Expanded(
-              flex: 1,
-              child: Container(
-                padding: const EdgeInsets.only(
-                    left: ThemeIndents.large,
-                    right: ThemeIndents.large,
-                    top: ThemeIndents.larger),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    _animationTitleController.render(),
-                    const SpacingBetween(),
-                    _animationSubTitleController.render(),
-                  ],
-                ),
-              ),
-            ),
-            Container(
-              padding: ThemeIndents.content,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
+      withSaveArea: false,
+      child: Column(
+        children: [
+          Expanded(flex: 2, child: _animationController.render()),
+          Expanded(
+            flex: 1,
+            child: Container(
+              padding: const EdgeInsets.only(
+                  left: ThemeIndents.large,
+                  right: ThemeIndents.large,
+                  top: ThemeIndents.larger),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  IconWithProgressButton(
-                    IconlyLight.arrow_right_2,
-                    value: _progress,
-                    onPressed: () {
-                      setState(() {
-                        if (_step < 3) {
-                          _progress += 0.25;
-                          _step++;
-                          _animationController.nextSlide();
-                          _animationTitleController.nextSlide();
-                          _animationSubTitleController.nextSlide();
-                        }
-                      });
-                    },
-                  )
+                  _animationTitleController.render(),
+                  const SpacingBetween(),
+                  _animationSubTitleController.render(),
                 ],
               ),
-            )
-          ],
-        ),
+            ),
+          ),
+          Container(
+            padding: ThemeIndents.content,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                IconWithProgressButton(
+                  IconlyLight.arrow_right_2,
+                  value: _progress,
+                  onPressed: () {
+                    setState(() {
+                      if (_step < 3) {
+                        _progress += 0.25;
+                        _step++;
+                        _animationController.nextSlide();
+                        _animationTitleController.nextSlide();
+                        _animationSubTitleController.nextSlide();
+                      }
+                    });
+                  },
+                )
+              ],
+            ),
+          )
+        ],
       ),
     );
   }

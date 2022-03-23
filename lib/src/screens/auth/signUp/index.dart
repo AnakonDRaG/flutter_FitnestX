@@ -35,7 +35,7 @@ class SignUpScreen extends StatelessWidget {
                   SizedBox(height: 5),
                   Heading4(
                     "Create an Account",
-                    textStyle: TextStyle(fontWeight: FontWeight.bold),
+                    style: TextStyle(fontWeight: FontWeight.bold),
                   )
                 ],
               ),
@@ -102,7 +102,7 @@ class SignUpScreen extends StatelessWidget {
               shadows: ThemeShadow.boxShadowBlue,
               isFullWidth: true,
               onPressed: () {
-                context.go("/onboarding");
+                context.go("/signUpStep2");
               },
             ),
             const SizedBox(height: 30),

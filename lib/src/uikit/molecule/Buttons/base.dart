@@ -9,6 +9,7 @@ import 'package:iconly/iconly.dart';
 class BaseButton extends StatefulWidget {
   final Object middleWidget;
   final Function()? onPressed;
+  final bool isDisabled;
 
   final bool isSmall;
   final bool isFullWidth;
@@ -43,6 +44,7 @@ class BaseButton extends StatefulWidget {
     this.width,
     this.height,
     this.shapeBorder,
+    this.isDisabled = false,
   }) : super(key: key);
 
   @override

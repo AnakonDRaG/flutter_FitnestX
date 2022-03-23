@@ -7,3 +7,10 @@ const ONBOARDING_HEADER_IMAGE_4 = "$_path/onboarding/header4.svg";
 
 const LOGO_FACEBOOK_SVG = "$_path/companies/facebook.svg";
 const LOGO_GOOGLE_SVG = "$_path/companies/google.svg";
+
+const SIGNUP_HEADER_IMAGE_1 = "$_path/signUp/header_1.svg";
+const SIGNUP_STEP_1_IMAGE = "$_path/signUp/step1.svg";
+const SIGNUP_STEP_2_IMAGE = "$_path/signUp/step2.svg";
+const SIGNUP_STEP_3_IMAGE = "$_path/signUp/step3.svg";
+
+const AUTH_WELCOME_IMAGE = "$_path/signUp/welcome.svg";

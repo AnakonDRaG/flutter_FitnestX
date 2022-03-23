@@ -17,10 +17,11 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      routeInformationParser: _router.getRouter.routeInformationParser,
-      routerDelegate: _router.getRouter.routerDelegate,
       title: 'FitnestX',
       theme: CustomTheme(context),
+      routeInformationParser: _router.getRouter.routeInformationParser,
+      routerDelegate: _router.getRouter.routerDelegate,
+      debugShowCheckedModeBanner: false,
     );
   }
 }

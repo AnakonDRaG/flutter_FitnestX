@@ -22,15 +22,12 @@ class ThemeProvider extends ChangeNotifier {
 }
 
 ThemeData CustomTheme(BuildContext context) => Theme.of(context).copyWith(
-      scaffoldBackgroundColor: ThemeColors.whiteColors.normal,
-      shadowColor: const Color(0xffECECEC),
-      textTheme: Theme.of(context)
-          .textTheme
-          .apply(fontFamily: 'Poppins')
-          .merge(TEXT_THEME_DEFAULT),
-      primaryTextTheme:
-          Theme.of(context).textTheme.apply(fontFamily: 'Poppins'),
-    );
+    scaffoldBackgroundColor: ThemeColors.whiteColors.normal,
+    shadowColor: const Color(0xffECECEC),
+    textTheme: Theme.of(context)
+        .textTheme
+        .merge(TEXT_THEME_DEFAULT)
+        .apply(fontFamily: 'Poppins',));
 
 class ApplicationTheme {
   static final darkTheme = ThemeData(

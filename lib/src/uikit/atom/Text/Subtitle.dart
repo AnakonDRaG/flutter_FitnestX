@@ -1,19 +1,20 @@
-import 'package:flutter/widgets.dart';
-import 'package:FitnestX/src/uikit/style/colors.dart';
+import 'package:flutter/material.dart';
 import 'package:FitnestX/src/uikit/style/textTheme.dart';
 
 class Subtitle extends StatelessWidget {
   final String text;
+  final TextStyle? style;
+  final TextAlign? textAlign;
 
-  const Subtitle(this.text, {Key? key}) : super(key: key);
+  const Subtitle(this.text, {Key? key, this.style, this.textAlign})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: TextStyle(
-          fontSize: FontSize.subtitle,
-          color: ThemeColors.grayColors.normal),
+      style: CustomTextTheme.subtitle1.merge(style),
+      textAlign: textAlign,
     );
   }
 }
