@@ -16,44 +16,224 @@ class FontSize {
 
   static const double logo1 = 36;
   static const double logo2 = 50;
+
+  static double lineHeight = 1.5;
 }
 
 class CustomTextTheme {
-  static double lineHeight = 1.5;
+  const CustomTextTheme();
 
-  static TextStyle get headline1 =>
-      TextStyle(fontSize: FontSize.h1, height: lineHeight);
+  static Heading1 get heading1 => Heading1();
 
-  static TextStyle get headline2 =>
-      TextStyle(fontSize: FontSize.h2, height: lineHeight);
+  static Heading2 get heading2 => Heading2();
 
-  static TextStyle get headline3 =>
-      TextStyle(fontSize: FontSize.h3, height: lineHeight);
+  static Heading3 get heading3 => Heading3();
 
-  static TextStyle get headline4 =>
-      TextStyle(fontSize: FontSize.h4, height: lineHeight);
+  static Heading4 get heading4 => Heading4();
 
-  static TextStyle get subtitle1 => TextStyle(
-      fontSize: FontSize.subtitle,
-      color: ThemeColors.grayColors.normal,
-      height: lineHeight);
+  static Subtitle get subtitle => Subtitle();
 
-  static TextStyle get subtitle2 => TextStyle(
-      fontSize: FontSize.small,
-      color: ThemeColors.grayColors.normal,
-      height: lineHeight);
+  static SmallSubtitle get smallSubtitle => SmallSubtitle();
 
-  static TextStyle get bodyText1 =>
-      TextStyle(fontSize: FontSize.large, height: lineHeight);
+  static LargeText get largeText => LargeText();
 
-  static TextStyle get bodyText2 =>
-      TextStyle(fontSize: FontSize.medium, height: lineHeight);
+  static MediumText get mediumText => MediumText();
 
-  static TextStyle get caption =>
-      TextStyle(fontSize: FontSize.caption, height: lineHeight);
+  static SmallText get smallText => SmallText();
 
-  static TextStyle get small =>
-      TextStyle(fontSize: FontSize.small, height: lineHeight);
+  static Caption get caption => Caption();
+}
+
+class Heading1 {
+  late TextStyle regular = TextStyle(
+    fontSize: FontSize.h1,
+    height: FontSize.lineHeight,
+  );
+
+  late TextStyle bold = regular.merge(const TextStyle(
+    fontWeight: FontWeight.w700,
+  ));
+
+  late TextStyle semi_bold = regular.merge(const TextStyle(
+    fontWeight: FontWeight.w600,
+  ));
+
+  late TextStyle medium = regular.merge(const TextStyle(
+    fontWeight: FontWeight.w500,
+  ));
+}
+
+class Heading2 {
+  late TextStyle regular = TextStyle(
+    fontSize: FontSize.h2,
+    height: FontSize.lineHeight,
+  );
+
+  late TextStyle bold = regular.merge(const TextStyle(
+    fontWeight: FontWeight.w700,
+  ));
+
+  late TextStyle semi_bold = regular.merge(const TextStyle(
+    fontWeight: FontWeight.w600,
+  ));
+
+  late TextStyle medium = regular.merge(const TextStyle(
+    fontWeight: FontWeight.w500,
+  ));
+}
+
+class Heading3 {
+  late TextStyle regular = TextStyle(
+    fontSize: FontSize.h3,
+    height: FontSize.lineHeight,
+  );
+
+  late TextStyle bold = regular.merge(const TextStyle(
+    fontWeight: FontWeight.w700,
+  ));
+
+  late TextStyle semi_bold = regular.merge(const TextStyle(
+    fontWeight: FontWeight.w600,
+  ));
+
+  late TextStyle medium = regular.merge(const TextStyle(
+    fontWeight: FontWeight.w500,
+  ));
+}
+
+class Heading4 {
+  late TextStyle regular = TextStyle(
+    fontSize: FontSize.h4,
+    height: FontSize.lineHeight,
+  );
+
+  late TextStyle bold = regular.merge(const TextStyle(
+    fontWeight: FontWeight.w700,
+  ));
+
+  late TextStyle semi_bold = regular.merge(const TextStyle(
+    fontWeight: FontWeight.w600,
+  ));
+
+  late TextStyle medium = regular.merge(const TextStyle(
+    fontWeight: FontWeight.w500,
+  ));
+}
+
+class Subtitle {
+  late TextStyle regular = TextStyle(
+    color: ThemeColors.grayColors.normal,
+    fontSize: FontSize.subtitle,
+    height: FontSize.lineHeight,
+  );
+
+  late TextStyle bold = regular.merge(const TextStyle(
+    fontWeight: FontWeight.w700,
+  ));
+
+  late TextStyle semi_bold = regular.merge(const TextStyle(
+    fontWeight: FontWeight.w600,
+  ));
+
+  late TextStyle medium = regular.merge(const TextStyle(
+    fontWeight: FontWeight.w500,
+  ));
+}
+
+class SmallSubtitle {
+  late TextStyle regular = TextStyle(
+    color: ThemeColors.grayColors.normal,
+    fontSize: FontSize.small,
+    height: FontSize.lineHeight,
+  );
+
+  late TextStyle bold = regular.merge(const TextStyle(
+    fontWeight: FontWeight.w700,
+  ));
+
+  late TextStyle semi_bold = regular.merge(const TextStyle(
+    fontWeight: FontWeight.w600,
+  ));
+
+  late TextStyle medium = regular.merge(const TextStyle(
+    fontWeight: FontWeight.w500,
+  ));
+}
+
+class LargeText {
+  late TextStyle regular = TextStyle(
+    fontSize: FontSize.large,
+    height: FontSize.lineHeight,
+  );
+
+  late TextStyle bold = regular.merge(const TextStyle(
+    fontWeight: FontWeight.w700,
+  ));
+
+  late TextStyle semi_bold = regular.merge(const TextStyle(
+    fontWeight: FontWeight.w600,
+  ));
+
+  late TextStyle medium = regular.merge(const TextStyle(
+    fontWeight: FontWeight.w500,
+  ));
+}
+
+class MediumText {
+  late TextStyle regular = TextStyle(
+    fontSize: FontSize.medium,
+    height: FontSize.lineHeight,
+  );
+
+  late TextStyle bold = regular.merge(const TextStyle(
+    fontWeight: FontWeight.w700,
+  ));
+
+  late TextStyle semi_bold = regular.merge(const TextStyle(
+    fontWeight: FontWeight.w600,
+  ));
+
+  late TextStyle medium = regular.merge(const TextStyle(
+    fontWeight: FontWeight.w500,
+  ));
+}
+
+class SmallText {
+  late TextStyle regular = TextStyle(
+    fontSize: FontSize.small,
+    height: FontSize.lineHeight,
+  );
+
+  late TextStyle bold = regular.merge(const TextStyle(
+    fontWeight: FontWeight.w700,
+  ));
+
+  late TextStyle semi_bold = regular.merge(const TextStyle(
+    fontWeight: FontWeight.w600,
+  ));
+
+  late TextStyle medium = regular.merge(const TextStyle(
+    fontWeight: FontWeight.w500,
+  ));
+}
+
+class Caption {
+  late TextStyle regular = TextStyle(
+    fontSize: FontSize.caption,
+    height: FontSize.lineHeight,
+  );
+
+  late TextStyle bold = regular.merge(const TextStyle(
+    fontWeight: FontWeight.w700,
+  ));
+
+  late TextStyle semi_bold = regular.merge(const TextStyle(
+    fontWeight: FontWeight.w600,
+  ));
+
+  late TextStyle medium = regular.merge(const TextStyle(
+    fontWeight: FontWeight.w500,
+  ));
 }
 
 late TextTheme TEXT_THEME_DEFAULT = TextTheme(

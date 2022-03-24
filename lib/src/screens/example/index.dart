@@ -25,11 +25,6 @@ class _ExampleState extends State<ExampleScreen>
         child: ScreenContent(
           child: Column(
             children: [
-              const Heading1("Heading1"),
-              const Heading2("Heading2"),
-              const Heading3("Heading3"),
-              const Heading4("Heading4"),
-              const Subtitle("Subtitle"),
               BaseButton(
                 "Back to welcome screen",
                 onPressed: () {

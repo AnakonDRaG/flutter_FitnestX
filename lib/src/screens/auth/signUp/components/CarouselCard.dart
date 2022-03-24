@@ -30,8 +30,8 @@ Widget CarouselCard(String assetImage, String title, String text) => Container(
                   ),
                   Text(
                     title,
-                    style: CustomTextTheme.bodyText2.merge(const TextStyle(
-                        color: Colors.white, fontWeight: FontWeight.w600)),
+                    style: CustomTextTheme.mediumText.semi_bold
+                        .merge(const TextStyle(color: Colors.white)),
                   ),
                   const SizedBox(
                     width: 50,
@@ -43,7 +43,7 @@ Widget CarouselCard(String assetImage, String title, String text) => Container(
                   ),
                   Text(
                     text,
-                    style: CustomTextTheme.bodyText2
+                    style: CustomTextTheme.mediumText.regular
                         .merge(const TextStyle(color: Colors.white)),
                   ),
                 ],

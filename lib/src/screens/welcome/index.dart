@@ -20,7 +20,7 @@ class _WellComeScreenState extends State<WelComeScreen> {
     return Screen(
       child: const ScreenContent(
         child: Padding(
-          padding: EdgeInsets.only(top: 40 * 4),
+          padding: EdgeInsets.only(top: 40),
           child: Center(child: LogoText()),
         ),
       ),

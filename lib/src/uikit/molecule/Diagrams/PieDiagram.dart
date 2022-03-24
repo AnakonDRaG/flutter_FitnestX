@@ -153,7 +153,8 @@ class PieDiagramPainter extends CustomPainter {
     late TextSpan text = TextSpan(
       style: TextStyle(
           color: Colors.white,
-          fontSize: 14 + 6 * (value / 100),
+          fontSize: 12 + 6 * (value / 100),
+          fontWeight: FontWeight.w600,
           shadows: [
             Shadow(
               offset: const Offset(0, 4),
@@ -176,7 +177,7 @@ class PieDiagramPainter extends CustomPainter {
               cos(math.radians(-(value - _startRad) / 4 / 100 * 90) * 4) /
                   2 *
                   radius -
-              textPainter.width / 1.8,
+              textPainter.width / 2.5,
           center.dy +
               sin(math.radians((value - _startRad) / 4 / 100 * 90) * 4) /
                   2 *

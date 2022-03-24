@@ -7,7 +7,7 @@ class LinkGradientText extends StatelessWidget {
   final String text;
   final TextStyle? textStyle;
 
-  final void onTap;
+  final Function()? onTap;
 
   const LinkGradientText(
     this.text, {
@@ -22,8 +22,9 @@ class LinkGradientText extends StatelessWidget {
       child: GradientText(
         text,
         gradient: ThemeGradients.purple,
-        textStyle: textStyle,
+        style: textStyle,
       ),
+      onTap: onTap,
     );
   }
 }

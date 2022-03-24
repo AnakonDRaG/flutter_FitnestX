@@ -22,7 +22,7 @@ class SignUpStepScreen_2 extends StatelessWidget {
           child: Center(
               child: Text(
             text,
-            style: CustomTextTheme.small.merge(const TextStyle(color: Colors.white)),
+            style: CustomTextTheme.smallText.regular.merge(const TextStyle(color: Colors.white)),
           )),
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
@@ -33,7 +33,6 @@ class SignUpStepScreen_2 extends StatelessWidget {
         );
 
     return Screen(
-      withSaveArea: false,
       child: PageScrollView(
         child: Column(
           children: [
@@ -45,14 +44,14 @@ class SignUpStepScreen_2 extends StatelessWidget {
             const SizedBox(height: 30),
             Column(
               children: [
-                const Heading4(
+                Text(
                   "Let’s complete your profile",
-                  style: TextStyle(fontWeight: FontWeight.bold),
+                  style: CustomTextTheme.heading4.bold,
                 ),
                 const SizedBox(height: 5),
-                Subtitle(
+                Text(
                   "It will help us to know more about you!",
-                  style: CustomTextTheme.subtitle2,
+                  style: CustomTextTheme.smallSubtitle.regular,
                 )
               ],
             ),

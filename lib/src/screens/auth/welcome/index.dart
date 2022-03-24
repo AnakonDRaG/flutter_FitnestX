@@ -32,14 +32,14 @@ class AuthWelcomeScreen extends StatelessWidget {
                   width: 214,
                   child: Column(
                     children: [
-                      const Heading4(
+                       Text(
                         "Welcome, Stefani",
-                        style: TextStyle(fontWeight: FontWeight.bold),
+                        style: CustomTextTheme.heading4.bold,
                       ),
                       const SizedBox(height: 5),
                       Text(
                         "You are all set now, let’s reach your goals together with us",
-                        style: CustomTextTheme.subtitle2, textAlign: TextAlign.center,
+                        style: CustomTextTheme.smallSubtitle.regular, textAlign: TextAlign.center,
                       ),
                     ],
                   ),

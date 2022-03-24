@@ -27,15 +27,15 @@ class SignUpScreen extends StatelessWidget {
           child: Column(
             children: [
               Column(
-                children: const [
-                  Text(
+                children:  [
+                  const Text(
                     "Hey there",
-                    style: TextStyle(fontSize: FontSize.large),
+                    style: const TextStyle(fontSize: FontSize.large),
                   ),
-                  SizedBox(height: 5),
-                  Heading4(
+                  const SizedBox(height: 5),
+                  Text(
                     "Create an Account",
-                    style: TextStyle(fontWeight: FontWeight.bold),
+                    style: CustomTextTheme.heading4.bold,
                   )
                 ],
               ),

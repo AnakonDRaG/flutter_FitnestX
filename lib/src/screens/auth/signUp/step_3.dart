@@ -47,7 +47,6 @@ class _SignUpStep3ScreenState extends State<SignUpStep3Screen> {
   @override
   Widget build(BuildContext context) {
     return Screen(
-      withSaveArea: true,
       child: Column(
         children: [
           Expanded(
@@ -56,15 +55,13 @@ class _SignUpStep3ScreenState extends State<SignUpStep3Screen> {
               width: 225,
               child: Column(
                 children: [
-                  const Heading4(
+                  Text(
                     "What is your goal ?",
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                    ),
+                    style: CustomTextTheme.heading4.bold
                   ),
-                  Subtitle(
+                  Text(
                     "It will help us to choose a best program for you",
-                    style: CustomTextTheme.subtitle2,
+                    style: CustomTextTheme.smallSubtitle.regular,
                     textAlign: TextAlign.center,
                   )
                 ],

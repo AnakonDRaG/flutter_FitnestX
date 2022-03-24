@@ -4,9 +4,11 @@ import 'package:FitnestX/src/uikit/atom/atoms.dart';
 import 'package:FitnestX/src/uikit/molecule/molecules.dart';
 import 'package:FitnestX/src/uikit/organism/organisms.dart';
 import 'package:FitnestX/src/uikit/style/indents.dart';
+import 'package:FitnestX/src/uikit/style/textTheme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:iconly/iconly.dart';
 
 class OnboardingScreen extends StatefulWidget {
@@ -61,9 +63,9 @@ class _OnboardingState extends State<OnboardingScreen> {
     durationMilliseconds: 500,
     children: List.generate(
       _titles.length,
-      (index) => Heading2(
+      (index) => Text(
         _titles[index],
-        style: const TextStyle(fontWeight: FontWeight.bold),
+        style: CustomTextTheme.heading2.bold,
         key: ValueKey(index),
       ),
     ),
@@ -74,9 +76,10 @@ class _OnboardingState extends State<OnboardingScreen> {
     durationMilliseconds: 600,
     children: List.generate(
       _subtitles.length,
-      (index) => Subtitle(
+      (index) => Text(
         _subtitles[index],
         key: ValueKey(index),
+        style: CustomTextTheme.subtitle.regular,
       ),
     ),
   );
@@ -84,7 +87,6 @@ class _OnboardingState extends State<OnboardingScreen> {
   @override
   Widget build(BuildContext context) {
     return Screen(
-      withSaveArea: false,
       child: Column(
         children: [
           Expanded(flex: 2, child: _animationController.render()),
@@ -121,6 +123,8 @@ class _OnboardingState extends State<OnboardingScreen> {
                         _animationController.nextSlide();
                         _animationTitleController.nextSlide();
                         _animationSubTitleController.nextSlide();
+                      } else {
+                        context.go("/login");
                       }
                     });
                   },

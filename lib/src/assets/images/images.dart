@@ -14,3 +14,9 @@ const SIGNUP_STEP_2_IMAGE = "$_path/signUp/step2.svg";
 const SIGNUP_STEP_3_IMAGE = "$_path/signUp/step3.svg";
 
 const AUTH_WELCOME_IMAGE = "$_path/signUp/welcome.svg";
+
+
+const DASHBOARD_AB_WORKOUT_IMAGE = "$_path/dashboard/ab-workout.svg";
+const DASHBOARD_APPLE_PIE_IMAGE = "$_path/dashboard/apple-pie.svg";
+const DASHBOARD_LOWEBODY_WORKOUT_IMAGE = "$_path/dashboard/lowebody-workout.svg";
+const DASHBOARD_PANCAKES_IMAGE = "$_path/dashboard/pancakes.svg";

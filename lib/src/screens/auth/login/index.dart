@@ -19,23 +19,21 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-
     return Screen(
       child: PageScrollView(
         child: ScreenContent(
           child: Column(
             children: [
               Column(
-                children: const [
-                  Text(
+                children:  [
+                  const Text(
                     "Hey there",
                     style: TextStyle(fontSize: FontSize.large),
                   ),
-                  SizedBox(height: 5),
-                  Heading4(
+                  const SizedBox(height: 5),
+                  Text(
                     "Welcome Back",
-                    style: TextStyle(fontWeight: FontWeight.bold),
+                    style: CustomTextTheme.heading4.bold,
                   )
                 ],
               ),
@@ -88,11 +86,12 @@ class LoginScreen extends StatelessWidget {
               children: [
                 Text(
                   "Don`t have an account yet? ",
-                  style: CustomTextTheme.bodyText2,
+                  style: CustomTextTheme.mediumText.regular,
                 ),
-                const LinkGradientText(
+                LinkGradientText(
                   "Register",
-                  textStyle: TextStyle(fontWeight: FontWeight.w600),
+                  textStyle: const TextStyle(fontWeight: FontWeight.w600),
+                  onTap: () => context.go("/signUpStep1"),
                 )
               ],
             )

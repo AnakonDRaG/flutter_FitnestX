@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:FitnestX/src/uikit/atom/Text/Subtitle.dart';
 import 'package:FitnestX/src/uikit/style/colors.dart';
 import 'package:FitnestX/src/uikit/style/textTheme.dart';
 
@@ -27,7 +26,7 @@ class LogoText extends StatelessWidget {
             ],
           ),
         ),
-        const Subtitle("Everybody Can Train")
+         Text("Everybody Can Train", style: CustomTextTheme.subtitle.regular,)
       ],
     );
   }

@@ -29,4 +29,10 @@ class ThemeColors {
   static const Color purple = Color(0xffC58BF2);
 
   static const Color border = Color(0xffF7F8F8);
+
+  static const Color success = Color(0xff42d742);
+  static const Color warning = Color(0xffffd600);
+  static const Color danger = Color(0xffff0000);
+
+
 }
