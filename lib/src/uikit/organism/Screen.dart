@@ -9,11 +9,13 @@ class Screen extends StatelessWidget {
   final Widget? bottomNavigationBar;
   final Widget? topBar;
 
+  final EdgeInsetsGeometry? bodyPadding;
+
   const Screen({
     Key? key,
     required this.child,
     this.bottomNavigationBar,
-    this.topBar,
+    this.topBar, this.bodyPadding,
   }) : super(key: key);
 
   @override
@@ -28,6 +30,7 @@ class Screen extends StatelessWidget {
             )
           : null,
       body: Container(
+        padding: bodyPadding,
         child: child,
       ),
       bottomNavigationBar: bottomNavigationBar,

@@ -106,7 +106,7 @@ class SignUpStepScreen_2 extends StatelessWidget {
           gradient: ThemeGradients.blue,
           isFullWidth: true,
           onPressed: () {
-            context.go("/signUpStep3_1");
+            context.go("/signUpStep3");
           },
         ),
       ),

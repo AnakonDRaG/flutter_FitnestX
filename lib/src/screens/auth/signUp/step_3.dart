@@ -1,4 +1,5 @@
 import 'package:FitnestX/src/assets/images/images.dart';
+import 'package:FitnestX/src/common/utils.dart';
 import 'package:FitnestX/src/screens/auth/signUp/models/CarouselItemModel.dart';
 import 'package:FitnestX/src/uikit/atom/atoms.dart';
 import 'package:FitnestX/src/uikit/molecule/molecules.dart';
@@ -48,6 +49,7 @@ class _SignUpStep3ScreenState extends State<SignUpStep3Screen> {
   @override
   Widget build(BuildContext context) {
     return Screen(
+      bodyPadding: EdgeInsets.only(top: ScreenUtils.topSafeHeight),
       child: Column(
         children: [
           Expanded(
