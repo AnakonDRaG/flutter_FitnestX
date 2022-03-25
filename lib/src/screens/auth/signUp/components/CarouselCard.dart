@@ -20,7 +20,7 @@ Widget CarouselCard(CarouselItemModel item) => Container(
           Expanded(
             child: SvgPicture.asset(
               item.assetImage,
-              fit: BoxFit.fitHeight,
+              fit: BoxFit.contain,
             ),
           ),
           Expanded(
