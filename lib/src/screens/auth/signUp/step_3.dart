@@ -1,4 +1,5 @@
 import 'package:FitnestX/src/assets/images/images.dart';
+import 'package:FitnestX/src/screens/auth/signUp/models/CarouselItemModel.dart';
 import 'package:FitnestX/src/uikit/atom/atoms.dart';
 import 'package:FitnestX/src/uikit/molecule/molecules.dart';
 import 'package:FitnestX/src/uikit/organism/organisms.dart';
@@ -22,27 +23,27 @@ class SignUpStep3Screen extends StatefulWidget {
 class _SignUpStep3ScreenState extends State<SignUpStep3Screen> {
   late int _pickedIndex = 0;
 
-
-  final _carouselItems = [
+  final _carouselItemsJson = [
     {
-      "image": SIGNUP_STEP_1_IMAGE,
+      "assetImage": SIGNUP_STEP_1_IMAGE,
       "title": "Improve Shape",
       "text":
-          "I have a low amount of body fat and need / want to build more muscle"
+      "I have a low amount of body fat and need / want to build more muscle"
     },
     {
-      "image": SIGNUP_STEP_2_IMAGE,
+      "assetImage": SIGNUP_STEP_2_IMAGE,
       "title": "Lean & Tone",
       "text":
-          "I’m “skinny fat”. look thin but have no shape. I want to add learn muscle in the right way"
+      "I’m “skinny fat”. look thin but have no shape. I want to add learn muscle in the right way"
     },
     {
-      "image": SIGNUP_STEP_3_IMAGE,
+      "assetImage": SIGNUP_STEP_3_IMAGE,
       "title": "Lose a Fat",
       "text":
-          "I have over 20 lbs to lose. I want to drop all this fat and gain muscle mass"
+      "I have over 20 lbs to lose. I want to drop all this fat and gain muscle mass"
     },
   ];
+
 
   @override
   Widget build(BuildContext context) {
@@ -55,10 +56,8 @@ class _SignUpStep3ScreenState extends State<SignUpStep3Screen> {
               width: 225,
               child: Column(
                 children: [
-                  Text(
-                    "What is your goal ?",
-                    style: CustomTextTheme.heading4.bold
-                  ),
+                  Text("What is your goal ?",
+                      style: CustomTextTheme.heading4.bold),
                   Text(
                     "It will help us to choose a best program for you",
                     style: CustomTextTheme.smallSubtitle.regular,
@@ -71,21 +70,19 @@ class _SignUpStep3ScreenState extends State<SignUpStep3Screen> {
           Expanded(
             child: CarouselSlider(
               options: CarouselOptions(
-                height: 478.0,
-                viewportFraction: 0.75,
-                aspectRatio: 2.0,
-                enlargeCenterPage: true,
-                onPageChanged: (int index, CarouselPageChangedReason reason){
-                  setState(() {
-                    _pickedIndex = index;
-                  });
-                }
-              ),
-              items: _carouselItems.map((item) {
+                  height: 478.0,
+                  viewportFraction: 0.75,
+                  aspectRatio: 2.0,
+                  enlargeCenterPage: true,
+                  onPageChanged: (int index, CarouselPageChangedReason reason) {
+                    setState(() {
+                      _pickedIndex = index;
+                    });
+                  }),
+              items: _carouselItemsJson.map((item) {
                 return Builder(
                   builder: (BuildContext context) {
-                    return CarouselCard(
-                        item["image"]!, item["title"]!, item["text"]!);
+                    return CarouselCard(CarouselItemModel.fromJson(item));
                   },
                 );
               }).toList(),

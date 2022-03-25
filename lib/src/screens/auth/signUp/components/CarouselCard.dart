@@ -5,7 +5,9 @@ import 'package:FitnestX/src/uikit/style/textTheme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-Widget CarouselCard(String assetImage, String title, String text) => Container(
+import '../models/CarouselItemModel.dart';
+
+Widget CarouselCard(CarouselItemModel item) => Container(
       width: 275,
       padding: const EdgeInsets.all(30),
       decoration: BoxDecoration(
@@ -17,7 +19,7 @@ Widget CarouselCard(String assetImage, String title, String text) => Container(
         children: [
           Expanded(
             child: SvgPicture.asset(
-              assetImage,
+              item.assetImage,
               fit: BoxFit.fitHeight,
             ),
           ),
@@ -29,7 +31,7 @@ Widget CarouselCard(String assetImage, String title, String text) => Container(
                     height: 20,
                   ),
                   Text(
-                    title,
+                    item.title,
                     style: CustomTextTheme.mediumText.semi_bold
                         .merge(const TextStyle(color: Colors.white)),
                   ),
@@ -42,7 +44,7 @@ Widget CarouselCard(String assetImage, String title, String text) => Container(
                     height: 20,
                   ),
                   Text(
-                    text,
+                    item.text,
                     style: CustomTextTheme.mediumText.regular
                         .merge(const TextStyle(color: Colors.white)),
                   ),
